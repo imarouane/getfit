@@ -1,0 +1,85 @@
+@use "../general-styles/colors"as clr;
+@use "../general-styles/typography"as type;
+
+.gallery {
+    margin: 5rem 0;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+
+        &--img {
+            position: relative;
+
+            figcaption {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                transition: all 0.45s ease-in-out;
+
+                a {
+                    display: grid;
+                    grid-template-columns: repeat(2, max-content);
+                    align-items: center;
+                    gap: 0.5rem;
+                    font-size: type.fs(mc);
+                    font-weight: type.fw(bold);
+                    line-height: 1;
+                    color: clr.clrs(clr-white);
+
+                    i {
+                        color: clr.clrs(clr-primary);
+                        transform: rotate(-45deg);
+                        transition: all 0.35s ease-in-out;
+                    }
+                }
+
+                &:hover {
+                    a {
+                        i {
+                            transform: rotate(0);
+                            color: clr.clrs(clr-white);
+                        }
+                    }
+                }
+            }
+
+            @media (hover) {
+                figcaption {
+                    transform: translate(-50%, 200%) scaleY(0);
+                    opacity: 0;
+                }
+
+                &:hover {
+                    figcaption {
+                        transform: translate(-50%, -50%) scaleY(1);
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &::after {
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0 0 0 / 0.5);
+            }
+
+            @media (hover) {
+                &::after {
+                    background-color: transparent;
+                }
+
+                &:hover::after {
+                    background-color: rgba(0 0 0 / 0.5);
+                }
+            }
+
+        }
+    }
+}

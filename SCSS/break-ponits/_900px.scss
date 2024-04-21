@@ -1,0 +1,85 @@
+@use "../general-styles/typography"as type;
+
+@media screen and (min-width:900px) {
+    .sec-pad {
+        padding: 6rem 8rem;
+    }
+
+    .card-title {
+        font-size: type.fs(l);
+        font-weight: type.fw(bold);
+    }
+
+    .card-link {
+        font-size: type.fs(m);
+    }
+
+    .card-desc {
+        font-size: 1.8rem;
+    }
+
+    .trainer__content--card {
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(3, min-content);
+        padding-bottom: 0;
+        padding-right: 2rem;
+
+        &__img {
+            grid-column: 1 / 5;
+            grid-row: 1 / -1;
+        }
+
+        &__title,
+        &__desc,
+        .card-links-container {
+            grid-column: 5 / -1;
+            padding: 0;
+        }
+
+        &__title {
+            grid-row: 1 / 2;
+            margin-top: 4rem;
+        }
+
+        &__desc {
+            grid-row: 2 / 3;
+            line-height: 1.7;
+        }
+
+        .card-links-container {
+            grid-row: 3 / 4;
+            margin-bottom: 4rem;
+        }
+
+        &:last-child {
+            padding-right: 0;
+            padding-left: 2rem;
+
+            .trainer__content--card__img {
+                grid-column: 7 / -1;
+            }
+
+            .trainer__content--card__title,
+            .trainer__content--card__desc,
+            .card-links-container {
+                grid-column: 1 / 7;
+            }
+        }
+    }
+
+    .about__content--trainers {
+        &__trainer {
+            flex-direction: row;
+            gap: 5rem;
+
+            &--info {
+                flex-basis: 50%;
+                align-self: center;
+            }
+        }
+
+        &__trainer:last-child {
+            flex-direction: row-reverse;
+        }
+    }
+}

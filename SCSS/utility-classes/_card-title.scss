@@ -1,0 +1,8 @@
+@use "../general-styles/typography"as type;
+
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: type.fs(mc);
+    font-weight: type.fw(semi-bold);
+    line-height: 1.1;
+}

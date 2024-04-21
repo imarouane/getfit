@@ -1,0 +1,66 @@
+@use "../general-styles/colors"as clr;
+@use "../general-styles/typography"as type;
+
+.about {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+
+        &--trainers {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+
+            &__trainer {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+
+                &--info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+
+                    &__name {
+                        font-size: type.fs(l);
+                        font-weight: type.fw(bold);
+                    }
+
+                    &__role {
+                        font-size: type.fs(m);
+                        font-weight: type.fw(regular);
+                    }
+
+                    &__expertise {
+                        font-size: type.fs(m);
+                        font-weight: type.fw(extra-bold);
+                        text-transform: uppercase;
+                        position: relative;
+
+                        &::before {
+                            position: absolute;
+                            content: "";
+                            bottom: 5px;
+                            left: 0;
+                            width: 5rem;
+                            height: 5px;
+                            background-color: clr.clrs(clr-primary);
+                            z-index: -1;
+                        }
+                    }
+
+                    &__social {
+                        display: flex;
+                        gap: 1rem;
+
+                        a {
+                            font-size: type.fs(m);
+                            color: clr.clrs(clr-black);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

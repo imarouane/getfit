@@ -1,0 +1,61 @@
+@use "../general-styles/colors"as clr;
+
+body {
+    font-family: 'Archivo', sans-serif;
+    line-height: 1.4;
+}
+
+a,
+input[type="submit"] {
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+    font-size: 1.8rem;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+input,
+fieldset,
+textarea,
+select {
+    border: none;
+    background: none;
+    outline: none;
+    border-radius: 0.5rem;
+}
+
+p {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+button {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+}
+
+.overlay {
+    position: relative;
+    z-index: 9;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(clr.clrs(clr-black), 0.75);
+    }
+}

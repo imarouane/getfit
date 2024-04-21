@@ -1,0 +1,54 @@
+@use "../general-styles/colors"as clr;
+@use "../general-styles/typography"as type;
+
+.features {
+
+    &__content {
+        display: grid;
+        grid-template-rows: repeat(2, min-content);
+        row-gap: 5rem;
+
+        &--title {
+            span {
+                font-family: 'Poppins', sans-serif;
+                text-transform: capitalize;
+            }
+
+        }
+
+        &--cards {
+            display: grid;
+            grid-template-rows: repeat(6, min-content);
+            gap: 2rem;
+
+            &__card:nth-child(2n) {
+                background-image: url("../images/features-card-bg.jpg");
+                background-size: cover;
+                color: clr.clrs(clr-white);
+            }
+
+            &__card {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                padding: 2rem;
+
+                &:nth-child(2n + 1) {
+                    padding-left: 0;
+                }
+
+                &--title {
+                    font-weight: type.fw(bold);
+                }
+
+                &--icon {
+                    align-self: flex-start;
+                    background-color: clr.clrs(clr-primary);
+                    font-size: type.fs(xl);
+                    padding: 2rem;
+                }
+            }
+        }
+    }
+
+}

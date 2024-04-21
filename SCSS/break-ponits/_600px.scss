@@ -1,0 +1,60 @@
+@media screen and (min-width:600px) {
+    .sec-title {
+        letter-spacing: normal;
+
+        span {
+            display: inline-block;
+        }
+    }
+
+    .header {
+        padding: 1rem 2rem;
+
+        &__nav {
+            &--links {
+                position: static;
+                transform: scale(1);
+                background: none;
+                border: none;
+                padding: 1.5rem;
+                padding-left: 0;
+                padding-right: 0;
+                flex-direction: row;
+                align-items: center;
+                gap: 3rem;
+                transform-origin: center;
+
+            }
+        }
+
+        &__hamburger {
+            display: none;
+        }
+    }
+
+    .features__content--cards {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, min-content);
+    }
+
+    .contact__content {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, min-content);
+        gap: 5rem 2rem;
+
+        &--titles {
+            grid-column: 1 / -1;
+            grid-row: 1 / 2;
+        }
+
+        &--info {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+
+        &--form {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+    }
+}

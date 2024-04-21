@@ -1,0 +1,45 @@
+@use "../general-styles/colors"as clr;
+@use "../general-styles/typography"as type;
+
+.testimonial {
+    &__content {
+        display: grid;
+        grid-template-rows: repeat(3, min-content);
+        gap: 5rem;
+
+        &--info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            &__rating {
+                margin-bottom: -1rem;
+                display: flex;
+                column-gap: .5rem;
+
+                i {
+                    font-size: type.fs(sc);
+                    color: clr.clrs(clr-primary);
+                }
+            }
+
+            &__text {
+                font-size: type.fs(mc);
+                font-weight: type.fw(bold);
+                line-height: 1.4;
+            }
+
+            &__name {
+                font-size: 1.8rem;
+                text-transform: uppercase;
+                font-weight: type.fw(medium);
+            }
+
+            &__program {
+                color: rgba(clr.clrs(clr-black), 0.6);
+                font-size: type.fs(sc);
+                font-weight: type.fw(regular);
+            }
+        }
+    }
+}

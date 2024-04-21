@@ -1,0 +1,41 @@
+@use "../general-styles/colors"as clr;
+@use "../general-styles/typography"as type;
+
+.trainer {
+    &__content {
+        display: grid;
+        grid-template-rows: repeat(3, min-content);
+        gap: 4rem;
+
+        &>div:first-child {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        &--link {
+            color: clr.clrs(clr-black);
+            font-weight: type.fw(medium);
+        }
+
+        &--card {
+            display: grid;
+            grid-template-rows: repeat(4, min-content);
+            gap: 2rem;
+            background-image: url("../images/trainer-card-bg.jpg");
+            background-size: cover;
+            padding-bottom: 4rem;
+
+            &__title,
+            &__desc,
+            .card-links-container {
+                padding: 0 2rem;
+            }
+
+            &__title,
+            &__desc {
+                color: clr.clrs(clr-white);
+            }
+        }
+    }
+}

@@ -1,0 +1,102 @@
+@use "../general-styles/typography"as type;
+
+@media screen and (min-width:800px) {
+    .hero__content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        &>div {
+            flex-shrink: 0;
+            flex-basis: 40%;
+        }
+    }
+
+    .gallery__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        &--img:last-child {
+            grid-column: 1 / -1;
+        }
+    }
+
+    .testimonial__content {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, min-content);
+        gap: 0 4rem;
+
+        &--title {
+            grid-column: 1 / -1;
+            grid-row: 1 / 2;
+        }
+
+        &--info {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            align-self: center;
+            gap: 2rem;
+
+            &__text {
+                font-size: type.fs(l);
+            }
+
+            &__name {
+                font-size: type.fs(m);
+            }
+        }
+
+        &--img {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+    }
+
+    .contact__content {
+        &--info {
+
+            align-self: center;
+
+            &__number,
+            &__email,
+            &__location,
+            &__working-times {
+                font-size: type.fs(mc);
+            }
+        }
+
+        &--form {
+            input,
+            textarea,
+            select,
+            button {
+                font-size: type.fs(m);
+            }
+        }
+    }
+
+    .footer__content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, min-content);
+  
+        &--programs {
+           grid-column: 1 / 2;
+           grid-row: 2 / 3;
+        }
+  
+        &--links {
+           grid-column: 2 / 3;
+           grid-row: 2 / 3;
+        }
+  
+        &--newsletter {
+           grid-column: 3 / 4;
+           grid-row: 2 / 3;
+        }
+  
+        &--social {
+           grid-row: 3 / 4;
+        } 
+     }
+}

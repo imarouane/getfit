@@ -1,0 +1,19 @@
+@use "../general-styles/colors"as clr;
+@use "../general-styles/typography"as type;
+
+.card-link {
+    color: clr.clrs(clr-white);
+    font-size: type.fs(sc);
+
+    &:last-child {
+        padding-left: 0;
+
+        &::before {
+            display: none;
+        }
+
+        &:hover {
+            color: clr.clrs(clr-primary);
+        }
+    }
+}
